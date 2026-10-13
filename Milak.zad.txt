@@ -1,7 +1,7 @@
 1. Zapisati naše uloge u ovome mikroprojektu.
-2. Zapisati pozitivne i negativne stvari u nasoj aplikaciji
+2. Zapisati pozitivne i negativne stvari u izradi.
 3. Zapisati odnos radnika u radu
-4. Zapisati datume kada smo svi zajedno bili na videopozivu radili svoje zadatke
-5. Opisati kratkim uvodom o čemu se radi naša aplikacija
-6. Dati upute za korištenje aplikacije i našemu testeru
-7. Zapisati prijedloge testera 
+4. Zapisati datume kada smo svi zajedno radili svoje zadatke
+5. Opisati kratkim uvodom o čemu se radi naš rad.
+6. Lijepo i čitko urediti dokument kako bi bio pregledniji za čitati
+7. Ispuniti Sprint.
