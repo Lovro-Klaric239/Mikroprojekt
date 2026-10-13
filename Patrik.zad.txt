@@ -1,7 +1,7 @@
-1. Poćetni ekran (Home) - logo aplikacije,naslov i glavni izornik M
+1. Početni ekran (Home) - naslov M
 2. Odabir boja i teme S
-3. Napraviti ikonu aplikacije M
-4. Polje za korisnićko ime,e-mail i lozinku M
-5. Naprvaiti postavke aplikacije S
-6. Profil korisnika-profilna slika,ime i osnovne informacije M
-7. Glavni izbornik - gumbi za različitr dijelove aplikacije M
+3. Kratki opis o nama S
+4. Naši interesi S
+5. Naši projekti S
+6. Kontakt S
+7. Glavni izbornik - gumbi za različiti dijelove stranice M
