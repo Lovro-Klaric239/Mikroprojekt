@@ -1,0 +1,7 @@
+1.Organizirati tim-podijeliti zadatke timu
+2.Napraviti plan projekta-odrediti što aplikacija treba sadržavati
+3.Odrediti rokove-dogovoriti do ka svaki član mora odraditi zadatke
+4.Pratiti napredak
+5.Komunicirati s timom-organizirati sastanke i rješavati probleme
+6.Provjeravati kvalitetu aplikacije
+7.Predstaviti projekt-pripremiti završnu prezentaciju i predstaviti aplikaciju nastavniku i razredu
