@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEGOVIĆI - Upoznajte naš tim</title>
+    
+    <!-- Google Fonts za moderan i moćan naslov -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome ikone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* Osnovne postavke i crno-crvena tema */
         :root {
-            --bg-color: #0f0f11;
-            --card-bg: #1a1a1e;
+            --bg-color: #0d0d0f;
+            --card-bg: #16161a;
+            --modal-bg: #1a1a20;
             --accent-red: #e63946;
             --accent-hover: #ff4d5a;
             --text-color: #f1f1f1;
             --text-muted: #a0a0a0;
-            --border-color: #2a2a30;
+            --border-color: #26262e;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
@@ -31,23 +41,26 @@
             flex-direction: column;
             justify-content: space-between;
             line-height: 1.6;
+            background-image: radial-gradient(circle at 50% 100%, rgba(230, 57, 70, 0.15) 0%, rgba(13, 13, 15, 0) 60%);
+            background-repeat: no-repeat;
         }
 
-        /* Hero sekcija s velikim naslovom */
+        /* Hero sekcija s moćnim fontom naslova */
         header {
             text-align: center;
             padding: 80px 20px 40px 20px;
-            background: linear-gradient(180deg, rgba(230, 57, 70, 0.15) 0%, rgba(15, 15, 17, 0) 100%);
+            background: linear-gradient(180deg, rgba(230, 57, 70, 0.18) 0%, rgba(13, 13, 15, 0) 100%);
         }
 
         header h1 {
-            font-size: 4rem;
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             color: var(--text-color);
             text-transform: uppercase;
             margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+            text-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
         }
 
         header h1 span {
@@ -55,10 +68,11 @@
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
+            letter-spacing: 1px;
         }
 
         /* Glavni kontejner za polja (kartice) */
@@ -71,22 +85,24 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 25px;
         }
 
-        /* Stilovi pojedinačnih polja */
+        /* Stilovi pojedinačnih polja (kartica) */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 14px;
+            padding: 35px 30px 30px 30px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        /* Crvena linija na vrhu kartice na hover */
         .card::before {
             content: '';
             position: absolute;
@@ -100,59 +116,271 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(230, 57, 70, 0.5);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(230, 57, 70, 0.2);
+            transform: translateY(-6px);
+            border-color: rgba(230, 57, 70, 0.6);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(230, 57, 70, 0.25);
         }
 
         .card:hover::before {
             opacity: 1;
         }
 
+        /* Detalji u gornjim kutovima za karticu "O nama" */
+        .card-corner-left {
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            font-size: 0.72rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .card-corner-right {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-size: 0.72rem;
+            background-color: rgba(230, 57, 70, 0.15);
+            color: var(--accent-red);
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Naslovi s ikonama */
         .card h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-red);
             margin-bottom: 15px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        .card h2 i {
+            font-size: 1.3rem;
         }
 
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            line-height: 1.7;
         }
 
-        /* Kontakt sekcija posebni detalji */
+        /* Oznaka za klik unutar kartice */
+        .click-hint {
+            margin-top: auto;
+            padding-top: 15px;
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Kontakt sekcija s ikonama */
         .contact-info {
             list-style: none;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .contact-info li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--text-muted);
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info li i {
+            color: var(--accent-red);
+            width: 18px;
+            text-align: center;
         }
 
         .contact-info strong {
             color: var(--text-color);
         }
 
-        /* Podnožje stranice */
+        /* Pop-up (Modal) Prozor za proširivanje kartice */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            border: 1px solid var(--accent-red);
+            box-shadow: 0 0 30px rgba(230, 57, 70, 0.3);
+            border-radius: 16px;
+            max-width: 650px;
+            width: 100%;
+            padding: 35px;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            color: var(--text-color);
+            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background-color: var(--accent-red);
+            color: #fff;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-body {
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        /* Podnožje stranice sa živim crvenim detaljima */
         footer {
             text-align: center;
-            padding: 30px 20px;
-            border-top: 1px solid var(--border-color);
+            padding: 40px 20px 30px 20px;
+            position: relative;
+            margin-top: 50px;
+            background: linear-gradient(0deg, rgba(230, 57, 70, 0.1) 0%, rgba(13, 13, 15, 0) 100%);
+        }
+
+        .footer-divider {
+            width: 100%;
+            max-width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+            margin: 0 auto 30px auto;
+            position: relative;
+        }
+
+        .footer-divider::after {
+            content: '◆';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--bg-color);
+            color: var(--accent-red);
+            padding: 0 10px;
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-red);
+            color: #fff;
+            border-color: var(--accent-red);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        footer p {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 40px;
+            font-size: 0.88rem;
+        }
+
+        footer p i {
+            color: var(--accent-red);
         }
 
         /* Prilagodljivost za mobilne ekrane */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.8rem;
+                letter-spacing: 3px;
             }
         }
     </style>
@@ -162,49 +390,161 @@
     <!-- Naslovna sekcija -->
     <header>
         <h1>BEGO<span>VIĆI</span></h1>
-        <p>Upoznajte naš tim – strast, vizija i zajednički ciljevi.</p>
+        <p>Upoznajte naš tim – strast prema tehnologijama, vizija i inovativni projekti.</p>
     </header>
 
-    <!-- Glavni sadržaj s karticama -->
+    <!-- Glavni sadržaj s karticama koje se mogu kliknuti -->
     <main class="container">
         <div class="grid">
 
             <!-- Polje 1: O nama -->
-            <section class="card">
-                <h2>O Nama</h2>
-                <p>Ovdje napišite kratak opis vašeg tima. Tko ste, čime se bavite i koja je vaša priča...</p>
+            <section class="card" onclick="openModal('modal-about')">
+                <span class="card-corner-left">EST. 2026</span>
+                <span class="card-corner-right">TIM BEGOVIĆI</span>
+                <h2><i class="fa-solid fa-users"></i> O Nama</h2>
+                <p>Mi smo tim entuzijasta usmjerenih na napredne tehnologije i razvoj digitalnih rješenja...</p>
+                <div class="click-hint">Upoznaj članove tima <i class="fa-solid fa-arrow-right"></i></div>
             </section>
 
             <!-- Polje 2: Naši interesi -->
-            <section class="card">
-                <h2>Naši Interesi</h2>
-                <p>Ovdje navedite područja koja vas zanimaju, tehnologije koje koristite ili hobije...</p>
+            <section class="card" onclick="openModal('modal-interests')">
+                <h2><i class="fa-solid fa-lightbulb"></i> Naši Interesi</h2>
+                <p>Fascinirani smo novim tehnologijama, razvojem softvera, dizajnom sučelja i kreiranjem novih aplikacija...</p>
+                <div class="click-hint">Pročitaj više <i class="fa-solid fa-arrow-right"></i></div>
             </section>
 
             <!-- Polje 3: Budući projekti -->
-            <section class="card">
-                <h2>Budući Projekti</h2>
-                <p>Ovdje opišite planove za budućnost, nadolazeće projekte i ideje koje razvijate...</p>
+            <section class="card" onclick="openModal('modal-projects')">
+                <h2><i class="fa-solid fa-rocket"></i> Budući Projekti</h2>
+                <p>Naš glavne projekt na kojem radimo je izrada vlastite višenamjenske aplikacije...</p>
+                <div class="click-hint">Pogledaj projekte <i class="fa-solid fa-arrow-right"></i></div>
             </section>
 
             <!-- Polje 4: Kontakt -->
-            <section class="card">
-                <h2>Kontakt</h2>
-                <p>Slobodno nam se javite za suradnju ili pitanja:</p>
+            <section class="card" onclick="openModal('modal-contact')">
+                <h2><i class="fa-solid fa-paper-plane"></i> Kontakt</h2>
+                <p>Slobodno nam se javite za pitanja, ideje ili suradnju na našoj nadolazećoj aplikaciji:</p>
                 <ul class="contact-info">
-                    <li><strong>E-mail:</strong> info@begovici.com</li>
-                    <li><strong>Telefon:</strong> +385 9x xxx xxxx</li>
-                    <li><strong>Lokacija:</strong> Hrvatska</li>
+                    <li><i class="fa-solid fa-envelope"></i> <strong>E-mail:</strong> info@begovici.com</li>
+                    <li><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> +385 9x xxx xxxx</li>
                 </ul>
+                <div class="click-hint">Detaljnije <i class="fa-solid fa-arrow-right"></i></div>
             </section>
 
         </div>
     </main>
 
+    <!-- PROŠIRENI PROZORI (MODALI ZA KLIK NA KARTICE) -->
+
+    <!-- Modal 1: O Nama -->
+    <div class="modal-overlay" id="modal-about" onclick="closeModalOnOverlay(event, 'modal-about')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-about')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-users"></i> Članovi tima Begovići</h2>
+            </div>
+            <div class="modal-body">
+                <p>Spaja nas strast prema modernim tehnologijama i stvaranju novih rješenja. Svaki član našeg tima donosi jedinstvene vještine u projekt:</p>
+                <ul>
+                    <li><strong>Fran Milak:</strong> Dokumentira sve korake, vodi evidenciju i brinu se da je svaki detalj projekta zabilježen i organiziran.</li>
+                    <li><strong>Lovro Klarić:</strong> Odličan programer zadužen za pisanje čistog, brzog i efikasnog koda te logiku aplikacije.</li>
+                    <li><strong>Patrik Paramin:</strong> Kreativni dizajner koji oblikuje moderan i privlačan vizualni identitet te korisničko sučelje.</li>
+                    <li><strong>Mihael Sekulić:</strong> Važan dio tima zadužen za idejni razvoj, testiranje i podršku u svim segmentima projekta.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Naši Interesi -->
+    <div class="modal-overlay" id="modal-interests" onclick="closeModalOnOverlay(event, 'modal-interests')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-interests')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-lightbulb"></i> Naši Interesi i Strasti</h2>
+            </div>
+            <div class="modal-body">
+                <p>Kao tim, iznimno nas zanimaju moderne tehnologije i mogućnosti koje pruža digitalni svijet:</p>
+                <ul>
+                    <li><strong>Programiranje & Softver:</strong> Istraživanje najnovijih programskih jezika i radnih okvira.</li>
+                    <li><strong>UI/UX Dizajn:</strong> Stvaranje intuitivnih i estetski privlačnih aplikacija.</li>
+                    <li><strong>Dokumentiranje & Inženjering:</strong> Precizno praćenje procesa razvoja i arhitekture sustava.</li>
+                    <li><strong>Inovacije:</strong> Razvoj novih ideja i rješavanje izazova kroz tehnologiju.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Budući Projekti -->
+    <div class="modal-overlay" id="modal-projects" onclick="closeModalOnOverlay(event, 'modal-projects')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-projects')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-rocket"></i> Budući Projekti - Nova Aplikacija</h2>
+            </div>
+            <div class="modal-body">
+                <p>Trenutno u potpunosti fokusiramo naš rad i energiju na razvoj moderne **nove aplikacije**.</p>
+                <p><strong>Ciljevi projekta:</strong></p>
+                <ul>
+                    <li><strong>Razvoj koda:</strong> Lovro Klarić radi na arhitekturi i funkcionalnosti aplikacije.</li>
+                    <li><strong>Dizajn:</strong> Patrik Paramin osmišljava moderan, brz i intuitivan dizajn.</li>
+                    <li><strong>Dokumentacija:</strong> Fran Milak pažljivo bilježi kompletan razvoj i specifikacije.</li>
+                    <li><strong>Strategija:</strong> Mihael Sekulić sudjeluje u testiranju i unaprjeđenju mogućnosti aplikacije.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Kontakt -->
+    <div class="modal-overlay" id="modal-contact" onclick="closeModalOnOverlay(event, 'modal-contact')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-contact')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-paper-plane"></i> Stupite u Kontakt</h2>
+            </div>
+            <div class="modal-body">
+                <p>Želite saznati više o našoj nadolazećoj aplikaciji ili stupiti u kontakt s timom?</p>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-envelope"></i> <strong>E-mail:</strong> info@begovici.com</li>
+                    <li><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> +385 9x xxx xxxx</li>
+                    <li><i class="fa-solid fa-location-dot"></i> <strong>Lokacija:</strong> Hrvatska</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Podnožje -->
     <footer>
-        <p>&copy; 2026 Begovići Tim. Sva prava pridržana.</p>
+        <div class="footer-divider"></div>
+
+        <!-- Ikone društvenih mreža -->
+        <div class="social-links">
+            <a href="#" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+        <p>&copy; 2026 Begovići Tim. Napravljeno s <i class="fa-solid fa-heart"></i> Sva prava pridržana.</p>
     </footer>
+
+    <!-- JavaScript skripta za otvaranje i zatvaranje interaktivnih prozora -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOverlay(event, id) {
+            if (event.target === document.getElementById(id)) {
+                closeModal(id);
+            }
+        }
+    </script>
 
 </body>
 </html>
