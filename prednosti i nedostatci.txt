@@ -1,38 +1,49 @@
-prednosti i nedostatci
+Ideja 1: Aplikacija za recepte prema 6 odabranih namirnica
+Opis aplikacije
+Korisnik na početnom zaslonu bira namirnice iz unaprijed zadane ponude (npr. piletina, rija, rajčica, jaja, tjestenina, gljive), a aplikacija mu izbacuje recepte koji se mogu pripremiti od tih sastojaka. Idealno za situacije kada ne znaš što skuhati s ostacima u hladnjaku.
 
-Aplikacija koja zbraja koliko si tekućine popio u danu i govori koliko ti je ostalo
+Plusevi (+)
+Velika praktičnost i korisnost: Rješava svakodnevni problem "što kuhati danas" s onim što već imaš kod kuće.
 
-Prednosti
-Potiče zdrave navike i pomaže u praćenju hidratacije
+Jednostavna za korištenje: Minimalističko sučelje jer korisnik bira iz fiksnog skupa namirnica, što olakšava programiranje i dizajn.
 
-Jednostavan i intuitivan koncept za svakoga
+Manje bacanja hrane: Pomaže ljudima da potroše namirnice kojima istječe rok trajanja.
 
-Mogućnost personalizacije ciljeva prema težini i aktivnosti
+Minusi (-)
+Ograničen izbor: Ako korisnik može birati samo između 6 (ili malog broja) namirnica, broj kombinacija recepata može biti prilično uzak.
 
-Korisni podsjetnici za pijenje vode
+Ovisnost o bazi podataka: Trebaš unaprijed unijeti i povezati recepte s točnim oznakama namirnica.
 
+Procjena vremena izrade (ukupno: ~25 - 35 sati)
+Dizajn sučelja (UI/UX): 5 - 7 sati
 
+Priprema baze podataka (recepti i namirnice): 6 - 8 sati
 
-Nedostatci 
-Zamor pri ručnom unosu svakog pića s vremenom
+Programiranje logike (filtriranje i prikaz recepata): 10 - 14 sati
 
-Velika konkurencija sličnih aplikacija na tržištu
+Testiranje i ispravak grešaka: 4 - 6 sati
 
-Univerzalne formule ne uzimaju uvijek u obzir individualne zdravstvene potrebe
+Ideja 2: Aplikacija za praćenje unosa tekućine (Water Tracker)
+Opis aplikacije
+Aplikacija koja prati koliko si vode ili druge tekućine popio tijekom dana, računa tvoj dnevni cilj na temelju unesenih podataka te prikazuje napredak i količinu tekućine koja ti je preostala do ispunjenja cilja.
 
+Plusevi (+)
+Izuzetno popularno i korisno: Ljudi vole ovakve aplikacije za zdravlje i fitnes jer ih podsjećaju na unos vode.
 
-Plusevi
--Jednostavnost: Vrlo lako za korištenje, bez gubljenja vremena.
+Laka implementacija: Logika se svodi na osnovne matematičke operacije (zbrajanje i oduzimanje).
 
--Manje bacanja hrane: Pomaže iskoristiti namirnice koje već imaš kod kuće.
+Mogućnost nadogradnje: Kasnije možeš dodati podsjetnike (notifikacije), statistiku po tjednima i grafove.
 
--Brza odluka: Rješava vječnu dilemu što kuhati danas.
+Minusi (-)
+Velika konkurencija: Na tržištu već postoji stotine ovakvih aplikacija, pa se moraš istaknuti nečim posebnim (npr. zabavnim dizajnom ili kućnim ljubimcem koji raste kad piješ vodu).
 
--Ciljana publika: Super za studente, početnike u kuhinji i zaposlene ljude.
+Ručni unos: Korisnici često zaborave unijeti svaku čašu vode, osim ako nema automatskih podsjetnika.
 
-Minusi
--Ograničen izbor: Izbor od samo 6 namirnica može biti preuzetan i frustrirati korisnike.
+Procjena vremena izrade (ukupno: ~18 - 25 sati)
+Dizajn sučelja i vizualnih prikaza (npr. čaša koja se puni): 5 - 7 sati
 
--Nedostatak ostalih sastojaka: Recepti često zahtijevaju dodatne začine i namirnice koje    korisnik možda nema.
+Programiranje unosa i izračuna (zbrajanje/preostalo): 6 - 8 sati
 
--Konkurencija: Postoje velike aplikacije za recepte (poput Supercook-a) koje nude puno više opcija.
+Implementacija lokalne pohrane (da se podaci ne brišu kad zatvoriš aplikaciju): 4 - 6 sati
+
+Testiranje: 3 - 4 sata
