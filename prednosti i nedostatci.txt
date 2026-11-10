@@ -1,0 +1,38 @@
+prednosti i nedostatci
+
+Aplikacija koja zbraja koliko si tekućine popio u danu i govori koliko ti je ostalo
+
+Prednosti
+Potiče zdrave navike i pomaže u praćenju hidratacije
+
+Jednostavan i intuitivan koncept za svakoga
+
+Mogućnost personalizacije ciljeva prema težini i aktivnosti
+
+Korisni podsjetnici za pijenje vode
+
+
+
+Nedostatci 
+Zamor pri ručnom unosu svakog pića s vremenom
+
+Velika konkurencija sličnih aplikacija na tržištu
+
+Univerzalne formule ne uzimaju uvijek u obzir individualne zdravstvene potrebe
+
+
+Plusevi
+-Jednostavnost: Vrlo lako za korištenje, bez gubljenja vremena.
+
+-Manje bacanja hrane: Pomaže iskoristiti namirnice koje već imaš kod kuće.
+
+-Brza odluka: Rješava vječnu dilemu što kuhati danas.
+
+-Ciljana publika: Super za studente, početnike u kuhinji i zaposlene ljude.
+
+Minusi
+-Ograničen izbor: Izbor od samo 6 namirnica može biti preuzetan i frustrirati korisnike.
+
+-Nedostatak ostalih sastojaka: Recepti često zahtijevaju dodatne začine i namirnice koje    korisnik možda nema.
+
+-Konkurencija: Postoje velike aplikacije za recepte (poput Supercook-a) koje nude puno više opcija.
