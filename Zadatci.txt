@@ -1,0 +1,9 @@
+Zadatci od Claudova
+1. Generator izgovora za neizvršene školske obveze
+2. Aplikacija za praćenje napretka u teretani
+3. Aplikacija za nasumičan odabir videoigre
+
+Zadatci od Nutrinitya
+1. Aplikacija koja zbraja koliko si tekućine popio u danu i govori koliko ti je ostalo
+2. Aplikacija gdje biraš između 6 namjernica i ispise se recepti koja sadrži tu namjernicu
+3. Aplikacija koja ti daje zanimacije ako ti je dosadno
